@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <title>Forecast</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika&family=Zilla+Slab:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="everything">
+      <div class="content">
+          <div class="searchBar">
+              <div class="row">
+                  <div class="col-6">
+                      <form id="form">
+                          <input id="search-input" type="text" placeholder="Enter a city" class="placeholder" />
+                        </div> 
+                        <div class="col-3">
+                          <button class="btn2" type="submit">
+                              Search
+                          </button>
+                        </div>
+                        <div class="col-3">
+                                <button
+                                  id="current-location-button"
+                                >
+                                  Current
+                                </button>
+                       </div>
+                         
+                      </form>
+
+                  </div>
+              </div>
+
+          </div>
+          <div class="weather">
+              <div class="row">
+                  <div class="col-4">
+                      <h3> Right now in...</h3>
+                      <h2 id="city">Aveiro, Portugal</h2>
+                      <h3 id="now">Sunday, 14:00</h3>
+                  </div>
+
+                  <div class="col-6">
+                      <div class="row">
+                          <h1> ☀️ </h1>
+                          <h1 id= "temperature">27</h1>
+                          <p id="units"><a id= "cel-link" href="#" > ºC </a> | <a id= "fa-link" href="#" > ºF </a></p>
+                      </div>
+                  </div>
+
+                  <div class="col-4">
+                      <p id=precipitation>Precipitation: 0%</p>
+                      <p id=wind>Wind: 16km/h</p>
+                      <p>UV index: 7</p>
+                      <p> 🌅rise: 7:07</p>
+                      <p> 🌇set: 19:58</p>
+                    
+
+                  </div>
+              </div>
+          </div>
+
+          <div class="cards">
+              <h2> The weather for the next 5 days:</h2>
+              <div class="row">
+                  <div class="col">
+                      <div class="card">
+                          <h4>Mon 7</h4>
+                          <h2>☀️</h2>
+                          <h3>30°C</h3>
+                      </div>
+                  </div>
+
+                  <div class="col">
+                      <div class="card">
+                          <h4>Tue 8</h4>
+                          <h2>☀️</h2>
+                          <h3>29°C</h3>
+                      </div>
+                  </div>
+
+                  <div class="col">
+                      <div class="card">
+                          <h4>Wed 9</h4>
+                          <h2>🌦</h2>
+                          <h3>27°C</h3>
+                      </div>
+                  </div>
+
+                  <div class="col">
+                      <div class="card">
+                          <h4>Thu 10</h4>
+                          <h2>🌦</h2>
+                          <h3>20°C</h3>
+                      </div>
+                  </div>
+
+                  <div class="col">
+                      <div class="card">
+                          <h4>Fri 11</h4>
+                          <h2>🌦</h2>
+                          <h3>22°C</h3>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
