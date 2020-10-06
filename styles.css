@@ -58,6 +58,11 @@ input {
   border-radius: 5px;
   font-family: "Signika", sans-serif;
 }
+.search-input{
+  width:400px;
+  height: 100px;
+  
+}
 
 .search-button {
   background-color: #2ecc71;
