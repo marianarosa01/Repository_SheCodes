@@ -29,11 +29,10 @@ function displayWeatherCondition(response) {
     response.data.main.temp
   );
 
-  document.querySelector("#precipitation").innerHTML =
-    response.data.main.precipitation;
+  document.querySelector("#precipitation").innerHTML = Math.round( response.data.main.precipitation.value);
+ 
   document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+    response.data.wind.speed);
 }
 function search(city) {
   let apiKey = "a2befefba6717af5963b4c9c8a8c0ee7";
