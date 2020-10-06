@@ -29,7 +29,7 @@ function displayWeatherCondition(response) {
     response.data.main.temp
   );
 
-  document.querySelector("#precipitation").innerHTML = Math.round( response.data.main.precipitation.value);
+  document.querySelector("#precipitation").innerHTML = Math.round( response.data.precipitation.value);
  
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed);
