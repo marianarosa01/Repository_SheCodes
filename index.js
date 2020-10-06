@@ -24,6 +24,15 @@ function currentDate(date) {
 
 //Challenge 2
 function displayWeatherCondition(response) {
+
+  let weatherIcon = document.querySelector("#icon");
+
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -33,6 +42,8 @@ function displayWeatherCondition(response) {
  
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed);
+
+
 }
 function search(city) {
   let apiKey = "a2befefba6717af5963b4c9c8a8c0ee7";
