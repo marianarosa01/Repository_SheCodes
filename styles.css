@@ -45,7 +45,7 @@ input {
   border-radius: 5px;
   font-size: 16px;
   display: inline;
-  max-width: 400px;
+  max-width: 800px;
 }
 
 .everything {
@@ -57,14 +57,10 @@ input {
   border-radius: 5px;
   font-family: "Signika", sans-serif;
 }
-.search-input{
-  width:4000px;
-  height: 100px;
-  
-}
+
 
 .search-button {
-  background-color: #2ecc71;
+  background-color: grey;
   color: #ffffff;
   padding: 24px, 16px;
   margin: 10px;
@@ -75,7 +71,7 @@ input {
 }
 
 .current-location-button{
-  background-color: #2ecc71;
+  background-color: grey;
   color: #ffffff;
   padding: 24px, 16px;
   margin: 10px;
@@ -84,7 +80,7 @@ input {
 :hover.current-location-button {
   background-color:rgb(22, 204, 204);
 }
-}
+
 
 .content {
   padding: 20px;
