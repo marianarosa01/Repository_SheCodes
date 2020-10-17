@@ -24,32 +24,24 @@ function currentDate(date) {
 
 //Challenge 2
 function displayWeatherCondition(response) {
-  
-  let weatherIcon = document.querySelector("#icon");
-  let descriptionElement =document.querySelector("#description");
-  let cityElement = document.querySelector("#city").value; //isto nao estava aqui antes
-  let temperatureElement =  document.querySelector("#temperature");
-  let humidityElement =document.querySelector("#humidity");
-  let windElement =document.querySelector("#wind");
-
-  //descriptionElement.innerHTML = response.data.weather[0].description;
- 
-  cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-
-  humidityElement.innerHTML = Math.round( response.data.main.humidity.value);
- 
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  function displayWeatherCondition(response) {
+    let weatherIcon = document.querySelector("#icon");
+    let descriptionElement = document.querySelector("#description");
+    let cityElement = document.querySelector("#city"); //isto nao estava aqui antes
+    let temperatureElement = document.querySelector("#temperature");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
+    //descriptionElement.innerHTML = response.data.weather[0].description;
+    cityElement.innerHTML = response.data.name;
+    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    humidityElement.innerHTML = Math.round(response.data.main.humidity.value);
+    windElement.innerHTML = Math.round(response.data.wind.speed);
     weatherIcon.setAttribute(
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-    iconElement.setAttribute("alt", response.data.weather[0].description);
+    weatherIcon.setAttribute("alt", response.data.weather[0].description);
+  
   
 }
 function search(city) {
@@ -74,7 +66,7 @@ function convertToCel(event) {
 function SubmitTheCity(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
-  search(city.value);
+  search(city);
 }
 //Week 5 homework
 
