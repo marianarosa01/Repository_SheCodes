@@ -24,26 +24,33 @@ function currentDate(date) {
 
 //Challenge 2
 function displayWeatherCondition(response) {
-
+  
   let weatherIcon = document.querySelector("#icon");
+  let descriptionElement =document.querySelector("#description");
+  let cityElement = document.querySelector("#city").value; //isto nao estava aqui antes
+  let temperatureElement =  document.querySelector("#temperature");
+  let humidityElement =document.querySelector("#humidity");
+  let windElement =document.querySelector("#wind");
 
-  weatherIcon.setAttribute(
+  //descriptionElement.innerHTML = response.data.weather[0].description;
+ 
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  humidityElement.innerHTML = Math.round( response.data.main.humidity.value);
+ 
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-
-  document.querySelector("#precipitation").innerHTML = Math.round( response.data.precipitation.value);
- 
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed);
-
-
+    weatherIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+  
 }
 function search(city) {
   let apiKey = "a2befefba6717af5963b4c9c8a8c0ee7";
@@ -67,7 +74,7 @@ function convertToCel(event) {
 function SubmitTheCity(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
-  search(city);
+  search(city.value);
 }
 //Week 5 homework
 
