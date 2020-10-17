@@ -35,7 +35,7 @@
                               Search
                           </button>
                         </div>
-                        <div class="col-3" id="current-button" >
+                        <div class="col-3" > <!-- id="current-button"  -->
                             <button id="current-location-button"
                             class="btn btn-primary w-100" style="background-color:#81d4fa;border-color: white" type="button"
                            >
@@ -51,24 +51,22 @@
           </div>
           <div class="weather">
               <div class="row">
-                  <div class="col-6" >
+                  <div class="col-6 text-right" >
                       <h3> Right now in...</h3>
                       <h2 id="city">Aveiro, Portugal</h2>
                       <h3 id="now">Sunday, 14:00</h3>
                       <h3 id="description"> </h3>
                   </div>
 
-                  <div class="col-6" >
+                  <div class="col-6 text-right" >
                       <div class="row">
-                        <h3> Right now is...</h3>
-                        <br>
                         <img src="" alt="Clear" id="icon" class="float-left" />
                           <h1 id= "temperature">27</h1>
                           <p id="units"><a id= "cel-link" href="#" > ºC </a> | <a id= "fa-link" href="#" > ºF </a></p>
                       </div>
                   </div>
 
-                  <div class="col-4">
+                  <div class="col-6 text-right">
                       <p >Wind: <span id="wind"></span> km/h</p>
                       <p >Humidity: <span id="humidity"></span>%</p>
                       <p>UV index: 7</p>
