@@ -10,13 +10,11 @@ function currentDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 ​
   let currentDay = days[date.getDay()];
-​
   let formattedDate = `${currentDay} ${formatHours(date)}`;
-​
   return formattedDate;
 }
 ​
@@ -38,11 +36,11 @@ function formatHours(timestamp) {
 function displayWeatherCondition(response) {
   let weatherIcon = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
-  let cityElement = document.querySelector("#city"); //isto nao estava aqui antes
+  let cityElement = document.querySelector("#city"); 
   let temperatureElement = document.querySelector("#temperature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  //descriptionElement.innerHTML = response.data.weather[0].description;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -131,15 +129,11 @@ function getCurrentLocation(event) {
 //Bonus Challenge
 ​
 let fahrenheitLink = document.querySelector("#fa-link");
-​
 fahrenheitLink.addEventListener("click", convertToFah);
 ​
 let celLink = document.querySelector("#cel-link");
-​
 celLink.addEventListener("click", convertToCel);
-​
 let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", SubmitTheCity);
-​
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
