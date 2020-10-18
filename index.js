@@ -1,6 +1,5 @@
 let currentTimeDoc = document.querySelector("#now");
 let time = new Date();
-​
 currentTimeDoc.innerHTML = currentDate(time);
 function currentDate(date) {
   let days = [
@@ -12,12 +11,10 @@ function currentDate(date) {
     "Friday",
     "Saturday",
   ];
-​
   let currentDay = days[date.getDay()];
   let formattedDate = `${currentDay} ${formatHours(date)}`;
   return formattedDate;
 }
-​
 function formatHours(timestamp) {
   let time = new Date(timestamp);
   let currentHour = time.getHours();
@@ -28,15 +25,13 @@ function formatHours(timestamp) {
   if (currentMin < 10) {
     currentMin = `0${currentMin}`;
   }
-​
   return `${currentHour}:${currentMin}`;
 }
-​
 //Challenge 2
 function displayWeatherCondition(response) {
   let weatherIcon = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
-  let cityElement = document.querySelector("#city"); 
+  let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -55,7 +50,6 @@ function dispalyForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
-​
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
@@ -78,16 +72,13 @@ function dispalyForecast(response) {
   `;
   }
 }
-​
 function search(city) {
   let apiKey = "a2befefba6717af5963b4c9c8a8c0ee7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
-​
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(dispalyForecast);
 }
-​
 function convertToFah(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -107,30 +98,24 @@ function SubmitTheCity(event) {
   search(city);
 }
 //Week 5 homework
-​
 function getPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "a2befefba6717af5963b4c9c8a8c0ee7";
   let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-​
   console.log(latitude);
   console.log(longitude);
   axios.get(apiUrl).then(displayWeatherCondition);
+  axios.get(apiUrl).then(dispalyForecast);
 }
-​
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getPosition);
 }
-​
 //Challenge 2 - week 4
-​
 //Bonus Challenge
-​
 let fahrenheitLink = document.querySelector("#fa-link");
 fahrenheitLink.addEventListener("click", convertToFah);
-​
 let celLink = document.querySelector("#cel-link");
 celLink.addEventListener("click", convertToCel);
 let searchForm = document.querySelector("#form");

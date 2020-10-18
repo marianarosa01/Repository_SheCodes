@@ -25,7 +25,7 @@
     <div class="everything">
       <div class="content">
           <div class="searchBar">
-              <div class="row" ;">
+              <div class="row" >
                   <div class="col-6">
                       <form id="form">
                           <input id="search-input" type="text" placeholder="Enter a city" class="placeholder" autocomplete="off" />
@@ -55,12 +55,11 @@
                       <h3> Right now in...</h3>
                       <h2 id="city">Aveiro, Portugal</h2>
                       <h3 id="now">Sunday, 14:00</h3>
-                      <h3 id="description"> </h3>
                   </div>
 
                   <div class="col-6 text-right" >
                       <div class="row">
-                        <img src="" alt="Clear" id="icon" class="float-left" />
+                        <img src="https://cdn4.iconfinder.com/data/icons/photo-and-accessories-1/64/sunny-wether-sun-cloud-cloudy-512.png" alt="Clear" id="icon" style= "width: 60x; height: 60px;" class="float-left" />
                           <h1 id= "temperature">27</h1>
                           <p id="units"><a id= "cel-link" href="#" > ºC </a> | <a id= "fa-link" href="#" > ºF </a></p>
                       </div>
@@ -69,10 +68,11 @@
                   <div class="col-6 text-right">
                       <p >Wind: <span id="wind"></span> km/h</p>
                       <p >Humidity: <span id="humidity"></span>%</p>
-                      <p>UV index: 7</p>
+                      <p id="uv-index">UV index: 7</p>
                       <p> 🌅rise: 7:07</p>
                       <p> 🌇set: 19:58</p>
-                    
+                      <p id="description">Description: Sunny with a few clouds </p>
+
 
                   </div>
               </div>
