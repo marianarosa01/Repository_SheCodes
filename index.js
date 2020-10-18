@@ -36,11 +36,15 @@ function formatHours(timestamp) {
 function displayWeatherCondition(response) {
   let weatherIcon = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
-  let cityElement = document.querySelector("#city"); //isto nao estava aqui antes
+  let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  //descriptionElement.innerHTML = response.data.weather[0].description;
+
+  document.querySelector("#sunrise").innerHTML = `${formatHours(response.data.sys.sunrise * 1000)}`;
+  document.querySelector("#sunset").innerHTML = `${formatHours(response.data.sys.sunset * 1000)}`;
+
+  descriptionElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -86,6 +90,7 @@ function search(city) {
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(dispalyForecast);
+
 }
 
 function convertToFah(event) {
@@ -109,14 +114,17 @@ function SubmitTheCity(event) {
 //Week 5 homework
 
 function getPosition(position) {
+ 
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "a2befefba6717af5963b4c9c8a8c0ee7";
   let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
   console.log(latitude);
   console.log(longitude);
   axios.get(apiUrl).then(displayWeatherCondition);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dispalyForecast);
+
 }
 
 function getCurrentLocation(event) {
